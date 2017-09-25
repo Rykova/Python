@@ -1,5 +1,6 @@
 import sys
 import random
+import numpy 
 
 
 print(sys.platform)
@@ -21,5 +22,11 @@ for elem in list:
 
 print(n)
 
-
-print(sum)
+count_list = numpy.zeros((int)k) 
+for e in list: 
+    count_list[e-1] = 1
+count = 0 
+for e in count_list: 
+    count+=e
+    
+print(count)
