@@ -18,15 +18,15 @@ print(list)
 for elem in list:
     if elem not in s:
         s.add(elem)
-        n += 1
+        n+= 1
 
 print(n)
 
-count_list = numpy.zeros((int)k) 
-for e in list: 
-    count_list[e-1] = 1
+list2 = numpy.zeros(int(k)) 
+for elem in list: 
+    list2[elem-1] = 1
 count = 0 
-for e in count_list: 
-    count+=e
+for elem in list2: 
+    count+=elem
     
 print(count)
