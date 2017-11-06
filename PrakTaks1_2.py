@@ -54,10 +54,7 @@ def AnalysisK1K2():
     # Multiplicity lines
     k2DetSolution = solve(detA.subs(x, xSolution), k2)
 
-    eqprek1 = k2Solution - k2DetSolution[0]
-    print(eqprek1)
-    k1JointDetSolution = solve(eqprek1.subs(k3_0, k3_0val ).subs(km1, km1val).subs(km2, km2val).subs(alpha,alphaval), k1)
-    print(k1JointDetSolution)
+    k1JointDetSolution = solve(expand(k2DetSolution[0] - k2Solution), k1)
     k2JointDetSolution = k2Solution.subs(k1, k1JointDetSolution[0])
     print(k2JointDetSolution)
     k1Det_of_y = lambdify((y, km1, km2, k3_0, alpha), k1JointDetSolution[0],'numpy')
